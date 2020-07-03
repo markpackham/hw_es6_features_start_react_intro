@@ -46,4 +46,14 @@ describe('Library', function () {
     library.addBook(book);
     assert.strictEqual(library.printInventory(),'The Hobbit by J R R Tolkien');
   })
+
+  it('should print multiple authors and titles',function(){
+    const books = [
+      new Book('J R R Tolkien', 'The Fellowship of the Ring', 'Fantasy'),
+      new Book('J R R Tolkien', 'The Two Towers', 'Fantasy'),
+      new Book('J R R Tolkien', 'The Return of the King', 'Fantasy')
+    ];
+    library.addBooks(books);
+    assert.strictEqual(library.printInventory(),'The Fellowship of the Ring by J R R Tolkien, The Two Towers by J R R Tolkien, The Return of the King by J R R Tolkien');
+  })
 });

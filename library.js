@@ -20,11 +20,9 @@ class Library {
 
   printInventory(){
     this.books.forEach(({ author, title }) => {
-      if(this.books.length === 1){
-      this.authorTitle += `${title} by ${author}`;
-      }
+        this.authorTitle += `${title} by ${author}, `;
     });
-    return this.authorTitle;
+    return this.authorTitle.slice(0, -2); 
   }
 }
 

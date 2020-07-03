@@ -1,6 +1,7 @@
 class Library {
   constructor(books = []){
     this.books = books;
+    this.authorTitle = '';
   }
 
   bookCount(){
@@ -12,11 +13,18 @@ class Library {
   }
 
   addBooks(newBooks){
-    newBooks.forEach(book => this.books.push(book));
+    //newBooks.forEach(book => this.books.push(book));
+    // spread operator to unpack the fields title and author from the parameter book
+    this.books = [...this.books, ...newBooks];
   }
 
   printInventory(){
-    newBooks.forEach(book => this.books.push(book));
+    this.books.forEach(({ author, title }) => {
+      if(this.books.length === 1){
+      this.authorTitle += `${title} by ${author}`;
+      }
+    });
+    return this.authorTitle;
   }
 }
 

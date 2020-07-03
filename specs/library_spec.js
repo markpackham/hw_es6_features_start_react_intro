@@ -40,4 +40,10 @@ describe('Library', function () {
     library.addBooks(books);
     assert.strictEqual(library.bookCount(), 3);
   });
+
+  it('should print author and title',function(){
+    const book = new Book('J R R Tolkien', 'The Hobbit', 'Fantasy');
+    library.addBook(book);
+    assert.strictEqual(library.printInventory(),'The Hobbit by J R R Tolkien');
+  })
 });
